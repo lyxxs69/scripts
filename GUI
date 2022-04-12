@@ -93,53 +93,6 @@ TextLabel_2.TextSize = 31.000
 TextLabel_2.Draggable = true
 
 
-
-CTP.Name = "CTP"
-CTP.Parent = Frame
-CTP.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
-CTP.BackgroundTransparency = 0.200
-CTP.Position = UDim2.new(0.719589233, 0, 0.412819207, 0)
-CTP.Size = UDim2.new(0, 140, 0, 48)
-CTP.Font = Enum.Font.SourceSansSemibold
-CTP.Text = "Ctrl+Click tp"
-CTP.TextColor3 = Color3.fromRGB(0, 0, 0)
-CTP.TextScaled = true
-CTP.TextSize = 29.000
-CTP.TextWrapped = true
-CTP.MouseButton1Down:connect(function()
-local Player = game.Players.LocalPlayer
-local Mouse = Player:GetMouse()
-local UserInputService = game:GetService('UserInputService')
-
-local HoldingControl = false
-
-Mouse.Button1Down:connect(function()
-if HoldingControl then
-Player.Character:MoveTo(Mouse.Hit.p)
-end
-end)
-
-UserInputService.InputBegan:connect(function(Input, Processed)
-if Input.UserInputType == Enum.UserInputType.Keyboard then
-if Input.KeyCode == Enum.KeyCode.LeftControl then
-HoldingControl = true
-elseif Input.KeyCode == Enum.KeyCode.RightControl then
-HoldingControl = true 
-end
-end
-end)
-
-UserInputService.InputEnded:connect(function(Input, Processed)
-if Input.UserInputType == Enum.UserInputType.Keyboard then
-if Input.KeyCode == Enum.KeyCode.LeftControl then
-HoldingControl = false
-elseif Input.KeyCode == Enum.KeyCode.RightControl then
-HoldingControl = false
-end
-end
-end)
-end)
-
 Close.Name = "Close"
 Close.Parent = Frame
 Close.BackgroundColor3 = Color3.fromRGB(255, 170, 255)

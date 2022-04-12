@@ -1,8 +1,5 @@
 --Made By !sae#0001
 
-game:GetService'Workspace'.Camera.FieldOfView = 120
-
-
 local plr = game:GetService('Players').LocalPlayer.Character
 local ScreenGui = Instance.new("ScreenGui")
 local OpenFrame = Instance.new("Frame")
